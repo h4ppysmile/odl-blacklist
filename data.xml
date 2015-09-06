@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flow xmlns="urn:opendaylight:flow:inventory">
+    <strict>false</strict>
+
+    <instructions>
+        <instruction>
+            <order>0</order>
+            <apply-actions>
+                <action>
+                    <order>0</order>
+                    <drop-action/>
+                </action>
+            </apply-actions>
+        </instruction>
+    </instructions>
+
+    <table_id>{TABLE_ID}</table_id>
+    <id>{FLOW_ID}</id>
+    <cookie_mask>255</cookie_mask>
+    <installHw>false</installHw>
+
+    <match>
+        <ethernet-match>
+            <ethernet-source>
+		    <address>{MAC}</address>
+            </ethernet-source>
+        </ethernet-match>
+    </match>
+    
+    <cookie>3</cookie>
+    <flow-name>{FLOW_NAME}</flow-name>
+    <priority>{PRIO}</priority>
+    <barrier>false</barrier>
+</flow>
